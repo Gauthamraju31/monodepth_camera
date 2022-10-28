@@ -1,0 +1,22 @@
+[property]
+gpu-id=0
+# ONNX Model
+onnx-file=../model/model-small.onnx
+# Preprocess
+net-scale-factor=0.0039215697906911373
+offsets=0.0;0.0;0.0
+# Tensorrt Engine Related
+model-engine-file=../model/model-small.onnx_b1_gpu0_fp32.engine
+#force-implicit-batch-dim=2
+infer-dims=3;256;256
+batch-size=1
+process-mode=1
+model-color-format=0
+network-input-order=0
+network-mode=0
+# Custom postprocess
+network-type=100
+interval=0
+gie-unique-id=1
+output-blob-names=797
+
