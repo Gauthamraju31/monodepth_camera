@@ -1,6 +1,8 @@
 #ifndef __DEEPSTREAM_MIDAS_H__
 #define __DEEPSTREAM_MIDAS_H__
 
+#include <cuda_runtime_api.h>
+
 extern "C"{
 #include <gst/gst.h>
 }
@@ -14,6 +16,7 @@ public:
     MidasPipeline();
     ~MidasPipeline();
 
+    int setup();
     bool configure(std::string);
     bool start_stream();
     bool change_state();
@@ -34,6 +37,8 @@ private:
 
     GstBus *_bus;
     GstMessage *_msg;
+
+    GstElement * _create_uridecode_bin ()
 
 }
 
